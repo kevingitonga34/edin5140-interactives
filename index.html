@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cisco Systems Case Study: Guided Reflection</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    color: #1e293b;
+    background: #ffffff;
+    padding: 24px 20px 40px;
+    line-height: 1.7;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .progress-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .progress-bar {
+    flex: 1;
+    height: 4px;
+    background: #e2e8f0;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: #003567;
+    border-radius: 2px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+
+  .progress-label {
+    font-size: 12px;
+    color: #64748b;
+    white-space: nowrap;
+  }
+
+  .q-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+
+  .q-header {
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 14px;
+    background: #003567;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .q-header:hover {
+    background: #002a54;
+  }
+
+  .q-num {
+    font-size: 11px;
+    font-weight: 600;
+    color: #FFD200;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    min-width: 68px;
+    padding-top: 3px;
+    flex-shrink: 0;
+  }
+
+  .q-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    flex: 1;
+    line-height: 1.6;
+  }
+
+  .q-icon {
+    font-size: 24px;
+    font-weight: 300;
+    color: #FFD200;
+    flex-shrink: 0;
+    line-height: 1;
+    width: 22px;
+    text-align: center;
+    padding-top: 1px;
+    transition: transform 0.25s ease;
+  }
+
+  .q-reveal {
+    display: none;
+    padding: 22px 22px 26px;
+    background: #ffffff;
+    border-top: 3px solid #FFD200;
+  }
+
+  .q-reveal.open {
+    display: block;
+  }
+
+  .q-analysis {
+    font-size: 14px;
+    color: #1e293b;
+    line-height: 1.85;
+    margin: 0 0 16px;
+  }
+
+  .q-analysis:last-child {
+    margin-bottom: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-row">
+  <div class="progress-bar">
+    <div class="progress-fill" id="prog-fill"></div>
+  </div>
+  <span class="progress-label" id="prog-text">0 of 4 revealed</span>
+</div>
+
+<div class="q-card">
+  <div class="q-header" onclick="toggle(1)" role="button" aria-expanded="false" id="h1">
+    <span class="q-num">Question 1</span>
+    <span class="q-text">Cisco identified five Level 4 measures and two Level 3 measures before a single training material was written. What does this tell you about how their evaluation strategy was designed, and how does it connect to the principle "The End is the Beginning"?</span>
+    <span class="q-icon" id="i1" aria-hidden="true">+</span>
+  </div>
+  <div class="q-reveal" id="r1" role="region" aria-labelledby="h1">
+    <p class="q-analysis">One of the most important things to notice about the Cisco case is what happened before training began. The Cost Accounting Department did not call in the Training Department and say they needed a course. They came with a business problem: quarterly write-offs from untraceable return-to-vendor transactions were cutting directly into profitability. Crucially, they had already defined what solving that problem would look like in measurable terms. Five Level 4 outcomes were identified and agreed upon before the Training Department had designed a single activity: eliminating write-off losses entirely, reducing the aging and queue of open RTV cases, lowering the dollar value of RTV inventory sitting in the plant, avoiding the cost of an additional hire in Cost Accounting, and increasing productivity across buyer and materials handling groups. Two Level 3 behavioral measures were set alongside these.</p>
+    <p class="q-analysis">This sequence matters enormously. In most organizations, training is designed first and evaluation is considered afterward, often as a way to justify what has already been done. Cisco reversed this entirely. By defining success at the organizational level before any instructional design began, every subsequent decision had a clear purpose. The content, the method, the timeline, and the measurement tools were all built to serve a destination that had already been named and agreed upon by the people who would eventually be judging the results. The case notes that this first step was "fairly easy" because Cost Accounting had already identified performance measures and had preexisting data, and because Information Systems had recently implemented a reporting process that tracked performance by buyer and product line. The infrastructure for measurement was already in place. The Training Department simply had to build to it.</p>
+    <p class="q-analysis">This is what "The End is the Beginning" means in operational terms. When you know what Level 4 looks like, you can identify the Level 3 behaviors required to get there. When you know what behaviors are required, you can determine what Level 2 learning is necessary. And when you know what learning is necessary, you can design the Level 1 experience that will make it meaningful and relevant to participants. Cisco followed this sequence exactly, and the clarity it produced shaped every decision that followed. The training was not designed to be well received. It was designed to produce a specific result that had already been defined and owned by the business partners who would be measuring it. That distinction is the difference between training as an activity and evaluation as a strategy.</p>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header" onclick="toggle(2)" role="button" aria-expanded="false" id="h2">
+    <span class="q-num">Question 2</span>
+    <span class="q-text">The case notes that the Level 2 measurement "removed any mystery about Level 3." What did Cisco do differently in training design that made the jump from learning to on-the-job performance less of a divide?</span>
+    <span class="q-icon" id="i2" aria-hidden="true">+</span>
+  </div>
+  <div class="q-reveal" id="r2" role="region" aria-labelledby="h2">
+    <p class="q-analysis">To understand why this case is so instructive on the great divide, it helps to first understand how most training programs handle the Level 2 to Level 3 transition, or rather, how they fail to handle it. In a typical approach, employees attend a training session, complete a knowledge check or post-test, receive a passing score, and return to the job. The underlying assumption is that demonstrated knowledge will translate into changed behavior. But this assumption consistently fails to hold. Knowing something and being able to perform it reliably under real working conditions are two very different things, and the space between them is exactly where training impact is most often lost.</p>
+    <p class="q-analysis">Cisco's 100% Proficiency training method was built around a fundamentally different standard. Completing training did not mean finishing a module or passing a quiz. It meant demonstrating the ability to perform the actual RTV task, rapidly and accurately, in front of a trained evaluator. Trainers would not sign off on a checksheet unless the student could execute the complete process from start to finish. These trainer checkouts were interspersed throughout the checksheet, with a final checkout requiring students to put everything together and perform the entire task as a whole. There was no pretest because students were being taught skills they had not previously performed, so a pretest would have been irrelevant. What mattered was that students could not advance, and could not be considered complete, until they had demonstrated full proficiency on the actual task.</p>
+    <p class="q-analysis">What this means for the great divide is significant. By the time a Cisco employee finished training, they had already done the job in a controlled setting. The Level 2 standard was not a proxy for Level 3 performance. It was Level 3 performance, demonstrated before going live. The case authors state explicitly that this Level 2 measure on the actual task to be performed on the job removed any mystery about Level 3, because students had been so thoroughly assessed during training that few training-related difficulties were expected on the job. The bridge between learning and performance was not hoped for or assumed. It was engineered into the design by making proficiency on the real task the condition for completing training at all.</p>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header" onclick="toggle(3)" role="button" aria-expanded="false" id="h3">
+    <span class="q-num">Question 3</span>
+    <span class="q-text">After training was complete, Cisco did not simply wait to see if the new process worked. What post-training support structures were in place, and how do these reflect the concept of required drivers?</span>
+    <span class="q-icon" id="i3" aria-hidden="true">+</span>
+  </div>
+  <div class="q-reveal" id="r3" role="region" aria-labelledby="h3">
+    <p class="q-analysis">Even the most well-designed training program cannot guarantee that employees will apply new skills on the job without some form of post-training support and accountability. This is the core insight behind required drivers, which are the reinforcement, monitoring, encouragement, and reward structures that sustain critical behaviors after training ends. Without them, even proficient employees tend to drift back toward familiar habits, particularly when a new process is more complex or less intuitive than what it replaced. Cisco built these structures into the implementation in two distinct and deliberate ways.</p>
+    <p class="q-analysis">The first was the immediate and permanent elimination of the paper process. Once training was complete, Cost Accounting would no longer accept manually written shipping authorizations, and the product could not return to the vendor without the online process being complete. The old process was structurally removed, not gradually phased out and not simply discouraged. This is one of the most powerful forms of a required driver and one that is frequently overlooked: changing the environment so that the desired behavior becomes the only viable path forward. Employees did not have to choose to use the new process on any given day. The choice was made for them by the structure of the system. This removed the single greatest barrier to sustained behavior change, which is not inability but the ease and comfort of reverting to familiar habits when the new way feels uncertain.</p>
+    <p class="q-analysis">The second was structured observation. After employees were signed off on their checksheets, trainers observed them over a weeklong period before the new process went live. During this window, trainers tracked how quickly employees were performing the RTV process, how many errors they were making, and the volume and cycle time of RTVs being processed by each buyer. Those having difficulty received direct coaching. This is monitoring and reinforcing in its most practical form, not waiting for problems to surface in the data, but actively watching for early signs of difficulty and addressing them in real time before they become embedded patterns. The case also notes that trainers and Cost Accounting observed a striking and immediate reduction in the number of questions being asked about the RTV process after training concluded, which served as a direct behavioral indicator that employees were applying the new skills without needing ongoing support from subject matter experts.</p>
+    <p class="q-analysis">Taken together, these structures reflect what Kirkpatrick describes as the required conditions for behavior change to take hold. The training itself produced proficiency. The structural removal of the old process ensured there was no alternative. And the observation period provided a real-time support window during the most vulnerable stage of transfer, the period immediately after training when new behaviors are most fragile. Each element addressed a different barrier to on-the-job application, and their combination is what allowed the Level 3 behaviors to connect to the Level 4 results.</p>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header" onclick="toggle(4)" role="button" aria-expanded="false" id="h4">
+    <span class="q-num">Question 4</span>
+    <span class="q-text">Cisco's conclusion identifies five factors that contributed to the program's success. Which most clearly reflects the principle of Return on Expectations, and what do the results themselves reveal about what was made possible by measuring from the start?</span>
+    <span class="q-icon" id="i4" aria-hidden="true">+</span>
+  </div>
+  <div class="q-reveal" id="r4" role="region" aria-labelledby="h4">
+    <p class="q-analysis">Of the five success factors Cisco identifies in its conclusion, the one that most directly reflects Return on Expectations is this: the training measures were identified by the business partners and agreed to before training began, and the results were to be collected by the business itself. This is the operational definition of ROE. Return on Expectations is not a calculation performed after training ends. It is a conversation that happens before training begins, in which key stakeholders define what success looks like in terms that are meaningful to their organizational priorities. When that conversation happens early and honestly, measurement becomes straightforward, because the data needed was identified before the program was designed, and the people who will read the results are the same people who defined what those results should be.</p>
+    <p class="q-analysis">What makes this especially significant in the Cisco case is the contrast it creates with the far more common pattern. In many organizations, training professionals design and deliver a program and then, when asked to demonstrate its value, find themselves attempting to connect outcomes to training retroactively, without baseline data and without pre-agreed measures. The result is a credibility problem: even when training did contribute to improved performance, there is no clean way to demonstrate it to stakeholders who had no say in defining what to look for. Cisco's approach solved this before it could arise. When the results arrived, they were immediately credible because both the measures and the targets had been established and owned by the business from the beginning.</p>
+    <p class="q-analysis">The results themselves are worth examining carefully. Write-offs from untraceable RTVs were reduced by 100 percent within one quarter. At first, the number of returns in the system increased by about 10 percent as employees used the new process and built their queues, but within four weeks the cycle time for returning boards was reduced from seven to ten days down to three days, and RTV inventory moved quickly out of the stockroom and back to the vendor. One person in Cost Accounting was freed to work on other projects because she was no longer handling paper authorizations and fielding questions. Buyer productivity increased by a minimum of 10 percent. Trainer productivity across departments increased by 10 to 30 percent depending on how RTV-heavy a given department was. These outcomes were measurable precisely because the reporting infrastructure and the pre-agreed targets existed before training began. The data did not have to be hunted for after the fact. It was already being collected.</p>
+  </div>
+</div>
+
+<script>
+  var openState = { 1: false, 2: false, 3: false, 4: false };
+
+  function toggle(n) {
+    openState[n] = !openState[n];
+    var panel = document.getElementById('r' + n);
+    var icon = document.getElementById('i' + n);
+    var header = document.getElementById('h' + n);
+
+    if (openState[n]) {
+      panel.classList.add('open');
+      icon.textContent = '\u00D7';
+      header.setAttribute('aria-expanded', 'true');
+    } else {
+      panel.classList.remove('open');
+      icon.textContent = '+';
+      header.setAttribute('aria-expanded', 'false');
+    }
+
+    var count = Object.values(openState).filter(function(v) { return v; }).length;
+    document.getElementById('prog-fill').style.width = (count * 25) + '%';
+    document.getElementById('prog-text').textContent = count + ' of 4 revealed';
+  }
+</script>
+
+</body>
+</html>
