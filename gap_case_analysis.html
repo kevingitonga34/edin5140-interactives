@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gap Leadership Training Case Analysis</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #ffffff;
+    color: #1a1a2e;
+    padding: 32px 24px 48px;
+    max-width: 860px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .progress-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+
+  .progress-bar {
+    flex: 1;
+    height: 5px;
+    background: #dde3ee;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #003567, #0056a8);
+    border-radius: 3px;
+    transition: width 0.45s ease;
+    width: 0%;
+  }
+
+  .progress-label {
+    font-family: Arial, sans-serif;
+    font-size: 0.8em;
+    color: #6b7a99;
+    white-space: nowrap;
+    min-width: 90px;
+    text-align: right;
+  }
+
+  .q-card {
+    border: 1px solid #d8e1f0;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: box-shadow 0.25s;
+  }
+
+  .q-card:hover { box-shadow: 0 3px 14px rgba(0,53,103,0.1); }
+
+  .q-header {
+    padding: 18px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 14px;
+    background: #003567;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s;
+  }
+
+  .q-header:hover { background: #002850; }
+
+  .q-header-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    flex: 1;
+  }
+
+  .q-num {
+    font-family: Arial, sans-serif;
+    font-size: 0.72em;
+    font-weight: 700;
+    color: #FFD200;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    padding-top: 3px;
+    min-width: 72px;
+  }
+
+  .q-text {
+    font-family: Arial, sans-serif;
+    font-size: 0.93em;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.5;
+  }
+
+  .q-toggle {
+    font-size: 22px;
+    color: #FFD200;
+    font-weight: 300;
+    line-height: 1;
+    padding-top: 1px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .q-toggle.open { transform: rotate(45deg); }
+
+  .q-reveal {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s ease, padding 0.3s ease;
+    background: #ffffff;
+    border-top: 0px solid #FFD200;
+  }
+
+  .q-reveal.open {
+    max-height: 1400px;
+    border-top: 3px solid #FFD200;
+  }
+
+  .q-reveal-inner {
+    padding: 24px 26px 28px;
+  }
+
+  .q-analysis {
+    font-size: 0.95em;
+    color: #2c3e50;
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+
+  .q-analysis:last-child { margin-bottom: 0; }
+
+  .q-analysis strong {
+    color: #003567;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-row">
+  <div class="progress-bar"><div class="progress-fill" id="prog-fill"></div></div>
+  <span class="progress-label" id="prog-text">0 of 4 revealed</span>
+</div>
+
+<!-- Question 1 -->
+<div class="q-card">
+  <div class="q-header" onclick="toggle(1)">
+    <div class="q-header-left">
+      <span class="q-num">Question 1</span>
+      <span class="q-text">Gap Inc. evaluated the LTS program at all four Kirkpatrick levels. What does the sequencing of their evaluation strategy reveal about how they understood the relationship between the levels?</span>
+    </div>
+    <span class="q-toggle" id="i1">+</span>
+  </div>
+  <div class="q-reveal" id="r1">
+    <div class="q-reveal-inner">
+      <p class="q-analysis">Gap Inc. did not evaluate the LTS program as four separate, independent exercises. Their evaluation strategy was designed from the beginning as a connected sequence, with each level informing the next. They moved from reaction to learning to behavior to organizational results in deliberate order, and at each stage they asked a specific question before moving forward: Did participants react positively? Did they learn? Did their behavior change? And did that change affect the business? This sequencing reflects the Kirkpatrick model as it is meant to be applied rather than as it is typically practiced.</p>
+      <p class="q-analysis">Most organizations stop at Level 1 or Level 2. They collect reaction data, perhaps administer a knowledge test, and call the evaluation complete. What Gap Inc. understood is that each level functions as a prerequisite for the next. A positive reaction creates the conditions for learning. Learning creates the potential for behavior change. Behavior change is what actually drives organizational results. Without this chain, evaluation becomes a series of disconnected data points rather than a coherent story about whether training worked.</p>
+      <p class="q-analysis">The Gap case also illustrates that evaluation must be planned before training is delivered, not retrofitted after the fact. The commitment to evaluate at all four levels was made at the onset of planning for the 1995 rollout. This meant that the instruments, the sampling strategy, the timing of data collection, and the approach to interpreting results were all designed in advance. That kind of forward planning is what made it possible to connect Level 3 behavior change scores to Level 4 business outcomes in a way that was credible and defensible.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Question 2 -->
+<div class="q-card">
+  <div class="q-header" onclick="toggle(2)">
+    <div class="q-header-left">
+      <span class="q-num">Question 2</span>
+      <span class="q-text">Gap Inc. used two separate instruments to evaluate Level 3 behavior change: a short-term post-program survey and a long-term Leadership Skills Assessment. Why does this distinction matter, and what does it reveal about the complexity of evaluating behavior transfer?</span>
+    </div>
+    <span class="q-toggle" id="i2">+</span>
+  </div>
+  <div class="q-reveal" id="r2">
+    <div class="q-reveal-inner">
+      <p class="q-analysis">The distinction between short-term and long-term behavior measurement is one of the most important design decisions in the Gap case. The post-program survey, administered no less than three months after training, captured participants' self-reported perceptions of change across twelve skill areas. This is useful data, but it has a limitation: it reflects how participants believe they have changed, not necessarily how they have actually changed. Perceptions can be inflated by enthusiasm, social desirability, or the fading memory of what behavior looked like before training.</p>
+      <p class="q-analysis">The Leadership Skills Assessment addresses this limitation directly. By collecting data from direct reports both before training and six to nine months after, Gap Inc. created a comparison that was external, longitudinal, and grounded in observable behavior. The people completing the assessment were not the managers who attended the training; they were the employees those managers worked with every day. Their observations carry a different kind of credibility, and the pre-post comparison allowed Gap Inc. to measure the degree of change rather than just its presence or absence. Seven of the eight skill areas showed statistically significant improvement, meaning the odds of the change occurring by chance were less than 50 in 1,000.</p>
+      <p class="q-analysis">Together, the two instruments illustrate a principle that runs through the Kirkpatrick framework: behavior change is not a single moment in time. It requires time to stabilize, and it should be measured from multiple perspectives. Relying solely on self-report, or measuring too soon after training, produces data that is easy to collect but difficult to trust. Gap Inc.'s decision to invest in both short-term and long-term measurement produced a much richer picture of what actually changed and whether those changes held.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Question 3 -->
+<div class="q-card">
+  <div class="q-header" onclick="toggle(3)">
+    <div class="q-header-left">
+      <span class="q-num">Question 3</span>
+      <span class="q-text">The Level 2 questionnaire at Gap used a fill-in-the-blank format and was administered anonymously to a 17 percent sample of participants. Evaluate these design choices. What do they tell you about how Gap approached the purpose and limitations of learning evaluation?</span>
+    </div>
+    <span class="q-toggle" id="i3">+</span>
+  </div>
+  <div class="q-reveal" id="r3">
+    <div class="q-reveal-inner">
+      <p class="q-analysis">The fill-in-the-blank format is a deliberate and telling choice. Rather than using a multiple choice or true-or-false instrument, which can be completed by elimination or guesswork, Gap Inc. required participants to actively produce answers from memory. The questionnaire had 55 possible points, covering concepts from Situational Leadership II including development levels, leadership styles, goal setting, communication, and feedback. A score of 87 percent across all divisions indicates that participants did not merely recognize the concepts when prompted; they could retrieve and apply them. That is a meaningfully higher bar for demonstrating learning.</p>
+      <p class="q-analysis">The anonymous administration addresses a real problem in learning evaluation: participants who feel their individual scores will be reviewed are likely to perform differently than those who know results will be aggregated. Anonymity reduces social pressure and produces more honest data about the actual state of learning across the group. This is a resource-conscious design choice that protects data quality without requiring extensive individual tracking.</p>
+      <p class="q-analysis">The 17 percent sampling strategy is worth examining carefully. Gap Inc. did not test every participant in every session. They sampled consistently across divisions, aggregated the results, and used those findings to draw conclusions about the program as a whole. This approach reflects the practical reality of large-scale training: comprehensive individual testing is expensive, time-consuming, and often culturally undesirable in private-sector organizations. Sampling, when done consistently and at a sufficient rate, can produce credible evidence of learning without exhausting evaluation resources. The decision to sample rather than test universally is itself a strategic judgment about where to invest evaluation effort.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Question 4 -->
+<div class="q-card">
+  <div class="q-header" onclick="toggle(4)">
+    <div class="q-header-left">
+      <span class="q-num">Question 4</span>
+      <span class="q-text">At Level 4, Gap Inc. identified positive correlations between improved Leadership Skills Assessment scores and store sales, employee turnover, and shrinkage. What does this finding demonstrate about the relationship between behavior change and organizational results, and what are its limitations as evidence?</span>
+    </div>
+    <span class="q-toggle" id="i4">+</span>
+  </div>
+  <div class="q-reveal" id="r4">
+    <div class="q-reveal-inner">
+      <p class="q-analysis">The Level 4 finding is the most significant result in the case, and also the most carefully qualified. Gap Inc. did not claim that leadership training caused increases in sales, reductions in turnover, or improvements in loss prevention. They reported a positive correlation: of the stores that showed improvement in all three business metrics, 50 to 80 percent also had managers who improved their LSA scores. That is a meaningful pattern, and it builds the kind of chain of evidence that Kirkpatrick and Kirkpatrick describe as the practical standard for demonstrating training value. It is not proof; it is a preponderance of evidence.</p>
+      <p class="q-analysis">This distinction matters because it reflects an honest understanding of how organizational outcomes are produced. Sales, turnover, and shrinkage are influenced by many factors: store location, economic conditions, staffing levels, inventory management, local competition, and more. Isolating training as the sole cause of improvement in any of these areas would be statistically complex and probably unconvincing to anyone who understands the business. What Gap Inc. did instead was show that when managers improved their leadership skills, positive business results followed at a rate that was too consistent to be coincidental. Over time, the trend strengthened, with the percentage of managers showing both improved LSA scores and positive business results steadily increasing one to two years after training.</p>
+      <p class="q-analysis">For evaluation practitioners, the Gap case offers an important lesson about how to present Level 4 findings. The goal is not to prove that training caused the results. The goal is to demonstrate a credible, documented relationship between the behaviors training was designed to build and the organizational outcomes stakeholders care about. That kind of evidence, accumulated consistently over time and presented honestly, is what earns the trust of business partners and positions the training function as a genuine contributor to organizational performance.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  var open = {1: false, 2: false, 3: false, 4: false};
+
+  function toggle(n) {
+    open[n] = !open[n];
+    var panel = document.getElementById('r' + n);
+    var icon = document.getElementById('i' + n);
+
+    if (open[n]) {
+      panel.classList.add('open');
+      icon.classList.add('open');
+    } else {
+      panel.classList.remove('open');
+      icon.classList.remove('open');
+    }
+
+    var count = Object.values(open).filter(function(v) { return v; }).length;
+    document.getElementById('prog-fill').style.width = (count * 25) + '%';
+    document.getElementById('prog-text').textContent = count + ' of 4 revealed';
+  }
+</script>
+
+</body>
+</html>
