@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IHC New Zealand Coaching Program: Guided Analysis</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    color: #1e293b;
+    background: #ffffff;
+    padding: 24px 20px 40px;
+    line-height: 1.7;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+
+  .progress-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .progress-bar {
+    flex: 1;
+    height: 4px;
+    background: #e2e8f0;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: #003567;
+    border-radius: 2px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+
+  .progress-label {
+    font-size: 12px;
+    color: #64748b;
+    white-space: nowrap;
+  }
+
+  .q-card {
+    border: 1px solid #d8e1f0;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: box-shadow 0.25s;
+  }
+
+  .q-card:hover { box-shadow: 0 3px 14px rgba(0,53,103,0.1); }
+
+  .q-header {
+    padding: 18px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 14px;
+    background: #003567;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: background 0.2s;
+  }
+
+  .q-header:hover { background: #002850; }
+
+  .q-header-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    flex: 1;
+  }
+
+  .q-num {
+    font-size: 0.72em;
+    font-weight: 700;
+    color: #FFD200;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    padding-top: 3px;
+    min-width: 72px;
+    flex-shrink: 0;
+  }
+
+  .q-text {
+    font-size: 0.93em;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.5;
+  }
+
+  .q-toggle {
+    font-size: 22px;
+    color: #FFD200;
+    font-weight: 300;
+    line-height: 1;
+    padding-top: 1px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .q-toggle.open { transform: rotate(45deg); }
+
+  .q-reveal {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s ease;
+    background: #ffffff;
+    border-top: 0px solid #FFD200;
+  }
+
+  .q-reveal.open {
+    max-height: 2000px;
+    border-top: 3px solid #FFD200;
+  }
+
+  .q-reveal-inner {
+    padding: 24px 26px 28px;
+  }
+
+  .q-analysis {
+    font-size: 0.94em;
+    color: #1e293b;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+
+  .q-analysis:last-child { margin-bottom: 0; }
+
+  .q-analysis strong {
+    color: #003567;
+    font-weight: 700;
+  }
+
+  .summary-block {
+    background: #003567;
+    border-radius: 8px;
+    padding: 28px 30px;
+    margin-top: 36px;
+    color: #ffffff;
+  }
+
+  .summary-block h3 {
+    font-size: 0.78em;
+    font-weight: 700;
+    color: #FFD200;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 14px;
+  }
+
+  .summary-block p {
+    font-size: 0.94em;
+    line-height: 1.8;
+    color: #e8eef8;
+    margin-bottom: 12px;
+  }
+
+  .summary-block p:last-child { margin-bottom: 0; }
+
+  .app-footer {
+    text-align: right;
+    font-size: 10px;
+    font-style: italic;
+    color: #94a3b8;
+    margin-top: 32px;
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-row">
+  <div class="progress-bar"><div class="progress-fill" id="prog-fill"></div></div>
+  <span class="progress-label" id="prog-text">0 of 4 revealed</span>
+</div>
+
+<div class="q-card">
+  <div class="q-header" onclick="toggle(1)" role="button" aria-expanded="false" id="h1">
+    <div class="q-header-left">
+      <span class="q-num">Question 1</span>
+      <span class="q-text">IHC identified stakeholder expectations, critical behaviors, and leading indicators before the coaching program was designed. What does this sequence reveal about how they understood the relationship between organizational mission and training design?</span>
+    </div>
+    <span class="q-toggle" id="i1">+</span>
+  </div>
+  <div class="q-reveal" id="r1" role="region" aria-labelledby="h1">
+    <div class="q-reveal-inner">
+      <p class="q-analysis">IHC did not begin with a course. They began with a strategy document. The organization's "Strategy 2020" outlined a mission focused on advocacy, inclusion, and the welfare of people with intellectual disabilities, and the specific initiative that gave rise to the coaching program was a commitment to the "my day, my way" philosophy of self-determination. Stakeholders were clear that for service users to lead more independent lives, the frontline managers who supervised support workers would need to operate differently. The coaching program existed to produce that change, and its design could not begin until that destination was defined.</p>
+      <p class="q-analysis">This is the operational meaning of beginning with the end. Before any training content was developed, IHC defined what managers would need to consistently do on the job after training: hold regular one-on-one coaching conversations with support workers, complete structured 7-, 30-, and 60-day coaching sessions, use a personality profiling tool to understand each team member, and adjust their own leadership approach accordingly. These were not aspirational descriptors. They were specific, observable, and directly connected to the leading indicators that would signal whether the mission was being advanced.</p>
+      <p class="q-analysis">The leading indicators in this case were not financial metrics. They were human ones: service users achieving personal goals with staff support, increased time spent by managers working alongside their teams, process changes that gave service users access to activities not previously available. These indicators were meaningful because they were tied to the organizational mission in a direct and traceable way. A manager holding regular coaching sessions was not performing a training requirement. She was performing a critical behavior that the evaluation framework predicted would move leading indicators that connected to outcomes IHC existed to produce. The sequence was not accidental. It was the structural logic of the New World Kirkpatrick Model applied to a mission-driven context where the stakes were not profitability but human dignity and independence.</p>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header" onclick="toggle(2)" role="button" aria-expanded="false" id="h2">
+    <div class="q-header-left">
+      <span class="q-num">Question 2</span>
+      <span class="q-text">The IHC evaluation approach collected data at multiple levels using a single post-program reaction sheet, action plan diaries, phone calls, face-to-face interviews, and a pilot dashboard. What does this blended approach reveal about how they used evaluation as an active management tool rather than a reporting exercise?</span>
+    </div>
+    <span class="q-toggle" id="i2">+</span>
+  </div>
+  <div class="q-reveal" id="r2" role="region" aria-labelledby="h2">
+    <div class="q-reveal-inner">
+      <p class="q-analysis">IHC's evaluation methodology was notable for what it collected and for when collection happened and what was done with the data. The post-program reaction sheet gathered Levels 1, 2, and predictive Level 3 simultaneously, asking participants to report not only their reaction to the training but their confidence and commitment to applying it on the job. This is the Blended Evaluation approach in direct practice: rather than treating each level as a separate exercise, IHC built tools that captured meaningful data across levels in a single efficient instrument.</p>
+      <p class="q-analysis">What followed the workshop was equally deliberate. Action plan diaries structured participants' thinking about what to start, stop, and continue doing. Phone calls at 60 days asked directly how the tools and techniques were being used. Face-to-face interviews with managers probed what was working and what was not. Face-to-face meetings with support workers asked what had changed in how their manager was operating. This layered post-training data collection was not done to fill a report. The case is explicit that evaluation results were analyzed and emailed to general managers, area managers, and the L&D team with suggested actions based on the data. Each round of data collection created the opportunity for a specific operational response.</p>
+      <p class="q-analysis">The pilot dashboard made this visible in structured form. Key indicators from the pilot were reported in a format that could be reviewed and acted upon, and the summation of pilot data was used to establish changes before the national rollout. This is the Monitor and Adjust function operating exactly as it is designed to operate: not waiting for a final report at the end of a program to see whether things worked, but building continuous feedback mechanisms into the rollout so that barriers could be identified and addressed while the program was still in motion. The 30-, 60-, 90-, and 120-day post-workshop catch-up calls between the facilitator and area manager extended this monitoring well beyond the training event itself, keeping Level 3 data in view long after participants had returned to their roles.</p>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header" onclick="toggle(3)" role="button" aria-expanded="false" id="h3">
+    <div class="q-header-left">
+      <span class="q-num">Question 3</span>
+      <span class="q-text">The case documents five specific barriers to success and the adjustments made in response to each. What do these barriers reveal about where behavior change most commonly breaks down, and how does IHC's response reflect the concept of required drivers?</span>
+    </div>
+    <span class="q-toggle" id="i3">+</span>
+  </div>
+  <div class="q-reveal" id="r3" role="region" aria-labelledby="h3">
+    <div class="q-reveal-inner">
+      <p class="q-analysis">None of IHC's five barriers were caused by poor training design. Participants did not fail to learn the coaching concepts. What broke down was the set of conditions surrounding application. In the first barrier, participants were selected who lacked the experience and competency to apply what they had learned. This is a pre-training environmental problem, not a training problem. The adjustment was to involve area managers more deliberately in candidate selection, ensuring that participants arrived at the workshop with the baseline required for the critical behaviors to take hold. In the second barrier, participants were not told why they were attending training or what was expected of them afterward. When people do not know the purpose of a training program, engagement collapses and transfer is unlikely regardless of content quality. The adjustment was pre-rollout workshops with general managers and area managers to ensure the purpose and expectations were communicated before participants arrived.</p>
+      <p class="q-analysis">The third and fourth barriers were both structural. Work pressures and competing initiatives caused post-workshop coaching sessions to be skipped. Administrative logistics overwhelmed the rollout without sufficient planning. Both of these barriers reflect a failure of the required drivers package: the systems and conditions that were supposed to sustain critical behaviors after training were not robust enough to withstand the ordinary pressures of operational life. The adjustments included ensuring each area was designated as "training ready" before rollout began, and dedicating an L&D consultant to support each area manager during their delivery window. These are not training solutions. They are organizational infrastructure solutions applied to a training-adjacent problem.</p>
+      <p class="q-analysis">The fifth barrier is the most instructive: changing the behaviors of long-standing staff proved difficult. This is the fundamental challenge that all required drivers are designed to address. Skills and knowledge acquired in training are fragile in the face of established habits and familiar ways of working. IHC's response was to use coaching itself as the intervention, working with resistant staff to help them consider approaches they had not previously tried. The case notes this as an ongoing issue encountered in every area but one where movement was being observed. This is honest evaluation practice. Rather than claiming full success or abandoning difficult cases, IHC documented the barrier, named the adjustment, and continued monitoring. That is what it looks like to use evaluation as a management tool rather than a justification exercise.</p>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header" onclick="toggle(4)" role="button" aria-expanded="false" id="h4">
+    <div class="q-header-left">
+      <span class="q-num">Question 4</span>
+      <span class="q-text">The most compelling Level 4 evidence in this case is not numerical. It is the five service user success stories. What does the use of qualitative success stories as Level 4 evidence reveal about how Return on Expectations applies in mission-driven organizations?</span>
+    </div>
+    <span class="q-toggle" id="i4">+</span>
+  </div>
+  <div class="q-reveal" id="r4" role="region" aria-labelledby="h4">
+    <div class="q-reveal-inner">
+      <p class="q-analysis">In a for-profit organization, Level 4 results are typically expressed in revenue, retention, or cost reduction. These are numbers that exist independently of the training department and can be borrowed from systems already tracking them. IHC's highest-level result was not a financial metric. It was the degree to which people with intellectual disabilities were leading more self-determined, fulfilling lives. That is not a number that lives in a spreadsheet. It lives in the daily experiences of people like Betty, who is now actively scrapbooking; Janee, whose health and wellbeing have improved; James, who has stopped self-harming and is now able to go out and interact with others; Anne, who can now withdraw her own money from a bank; and Melody, who developed a solution to her own anxiety and implemented it herself.</p>
+      <p class="q-analysis">These stories are not anecdotes appended to a report for color. They are the measurement. Each one traces a direct path from manager coaching behavior to support worker performance to service user outcome. A manager used the profiling tool to help her support worker communicate differently with a service user, and that service user found her voice. That is Level 3 connected to Level 4 in a form that is specific, observable, and directly tied to the organizational mission. When Kirkpatrick describes a compelling chain of evidence as the means by which training professionals demonstrate value, these stories are exactly what that chain looks like in an organization whose results are measured in human outcomes rather than financial ones.</p>
+      <p class="q-analysis">Return on Expectations requires that stakeholders define what success looks like before the program begins, so that the data collected afterward can answer the question they actually care about. IHC's stakeholders cared about whether service users were gaining independence and living fuller lives. The reaction sheet, the action plan diaries, the phone calls, the interviews, and the dashboard were all oriented toward that destination. The success stories are not a workaround for the absence of quantitative data. They are the most direct and credible form of evidence available for the outcome that was promised. A senior manager reading these five accounts does not need a statistical analysis to know whether the coaching program produced results. The evidence is unambiguous, it is human, and it is exactly what the expectations said success would look like.</p>
+
+      <div class="summary-block">
+        <h3>What This Case Demonstrates</h3>
+        <p>The IHC case illustrates that the New World Kirkpatrick Model is not a corporate framework adapted for mission-driven organizations. It is an evaluation logic that applies wherever training is expected to produce behavioral change that contributes to a defined organizational purpose. The logic is the same whether the Level 4 result is expressed in dollars or in the dignity of the people an organization serves.</p>
+        <p>What makes IHC's approach exemplary is not perfection. The barriers were real, the adjustments were ongoing, and the rollout encountered every kind of operational resistance that programs encounter in the field. What makes it exemplary is that evaluation was built into the program design from the beginning, was used continuously to inform decisions during implementation, and produced evidence that was directly connected to what stakeholders had defined as meaningful. That is the complete arc of the framework in practice.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="app-footer">
+  created by Dr. Basiyr D. Rodney for EDIN 5140 Spring 2026
+</div>
+
+<script>
+  var openState = { 1: false, 2: false, 3: false, 4: false };
+
+  function toggle(n) {
+    openState[n] = !openState[n];
+    var panel = document.getElementById('r' + n);
+    var icon = document.getElementById('i' + n);
+    var header = document.getElementById('h' + n);
+
+    if (openState[n]) {
+      panel.classList.add('open');
+      icon.classList.add('open');
+      icon.textContent = '+';
+      header.setAttribute('aria-expanded', 'true');
+    } else {
+      panel.classList.remove('open');
+      icon.classList.remove('open');
+      icon.textContent = '+';
+      header.setAttribute('aria-expanded', 'false');
+    }
+
+    var count = Object.values(openState).filter(function(v) { return v; }).length;
+    document.getElementById('prog-fill').style.width = (count * 25) + '%';
+    document.getElementById('prog-text').textContent = count + ' of 4 revealed';
+  }
+</script>
+
+</body>
+</html>
