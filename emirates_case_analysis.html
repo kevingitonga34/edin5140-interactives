@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emirates SOAR Program: Guided Analysis</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    color: #1e293b;
+    background: #ffffff;
+    padding: 24px 20px 40px;
+    line-height: 1.7;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .progress-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .progress-bar {
+    flex: 1;
+    height: 4px;
+    background: #e2e8f0;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: #003567;
+    border-radius: 2px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+
+  .progress-label {
+    font-size: 12px;
+    color: #64748b;
+    white-space: nowrap;
+  }
+
+  .q-card {
+    border: 1px solid #d8e1f0;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: box-shadow 0.25s;
+  }
+
+  .q-card:hover { box-shadow: 0 3px 14px rgba(0,53,103,0.1); }
+
+  .q-header {
+    padding: 18px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 14px;
+    background: #003567;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: background 0.2s;
+  }
+
+  .q-header:hover { background: #002850; }
+
+  .q-header-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    flex: 1;
+  }
+
+  .q-num {
+    font-size: 0.72em;
+    font-weight: 700;
+    color: #FFD200;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    padding-top: 3px;
+    min-width: 72px;
+    flex-shrink: 0;
+  }
+
+  .q-text {
+    font-size: 0.93em;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.5;
+  }
+
+  .q-toggle {
+    font-size: 22px;
+    color: #FFD200;
+    font-weight: 300;
+    line-height: 1;
+    padding-top: 1px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .q-reveal {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s ease;
+    background: #ffffff;
+    border-top: 0px solid #FFD200;
+  }
+
+  .q-reveal.open {
+    max-height: 2000px;
+    border-top: 3px solid #FFD200;
+  }
+
+  .q-reveal-inner {
+    padding: 24px 26px 28px;
+  }
+
+  .q-analysis {
+    font-size: 0.94em;
+    color: #1e293b;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+
+  .q-analysis:last-child { margin-bottom: 0; }
+
+  .q-analysis strong {
+    color: #003567;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-row">
+  <div class="progress-bar"><div class="progress-fill" id="prog-fill"></div></div>
+  <span class="progress-label" id="prog-text">0 of 4 revealed</span>
+</div>
+
+<div class="q-card">
+  <div class="q-header" onclick="toggle(1)" role="button" aria-expanded="false" id="h1">
+    <div class="q-header-left">
+      <span class="q-num">Question 1</span>
+      <span class="q-text">Before any training was designed, Emirates GLD taught the five Kirkpatrick foundational principles to key leaders from both the learning and business sides of the initiative, then drafted a memorandum of understanding. What does this sequence reveal about how they understood the relationship between organizational commitment and evaluation design?</span>
+    </div>
+    <span class="q-toggle" id="i1">+</span>
+  </div>
+  <div class="q-reveal" id="r1" role="region" aria-labelledby="h1">
+    <div class="q-reveal-inner">
+      <p class="q-analysis">The decision to teach the foundational principles before designing anything was not a training event. It was a political act. Emirates GLD understood that no evaluation plan, however well constructed, can survive an organization that does not share the language and logic behind it. When business leaders from the Global Contact Center sat in the same room as L&D professionals and worked through principles like "the end is the beginning" and "business partnership is necessary to bring about positive ROE," they were not being trained. They were being recruited as co-owners of an evaluation strategy that had not yet been built. That is a fundamentally different orientation than deploying a program and then hoping managers will support it.</p>
+      <p class="q-analysis">The memorandum of understanding made that co-ownership operational. It was not a project plan or a communication document. It was a formal agreement that named critical processes, defined roles, identified the required drivers of critical on-the-job behaviors, and established the evaluation methodology before a single training session was scheduled. The significance of this is difficult to overstate. In most organizations, these conversations happen after training ends, when the evaluator is attempting to retroactively connect outcomes to a program that was never designed with measurement in mind. Emirates reversed that sequence entirely. By the time any agent entered a SOAR session, both parties already knew what success looked like, who was responsible for measuring it, and what structures would be in place to support it.</p>
+      <p class="q-analysis">What this sequence reveals about organizational commitment is precise: evaluation does not produce organizational commitment. Organizational commitment produces the conditions under which evaluation can work. The memorandum of understanding was the artifact of a relationship that had been deliberately built before it was needed. The five foundational principles were the shared language that made it possible for people with different roles and different accountabilities to sit at the same table and define what a training program was actually supposed to accomplish. Without that foundation, the evaluation data collected later would have had no audience prepared to act on it.</p>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header" onclick="toggle(2)" role="button" aria-expanded="false" id="h2">
+    <div class="q-header-left">
+      <span class="q-num">Question 2</span>
+      <span class="q-text">The case notes that the on-the-job support package deployed after SOAR was the first of its kind in Emirates Group history. It included monitoring, monthly dashboards, on-the-job training, recognition, role modeling, coaching, global call calibrations, and ongoing data analysis. What does the novelty of this package tell you about what had been missing from Emirates' previous evaluation approach, and how does it reflect the required drivers concept?</span>
+    </div>
+    <span class="q-toggle" id="i2">+</span>
+  </div>
+  <div class="q-reveal" id="r2" role="region" aria-labelledby="h2">
+    <div class="q-reveal-inner">
+      <p class="q-analysis">The phrase "for the first time in Emirates Group history" is the most diagnostic statement in the entire case. It tells you exactly what the previous approach looked like: training programs followed by nothing. Agents attended sessions, acquired knowledge, completed whatever assessments were built into the program, and returned to their roles without any structured system to monitor whether they were applying what they had learned, reinforce the behaviors that were working, or intervene when they were not. This is not a description of a weak training organization. Emirates GLD was by any measure a capable and sophisticated L&D function. But capability in training design does not automatically produce capability in transfer support, and the absence of a post-training performance package is one of the most common structural gaps in even the most well-resourced organizations.</p>
+      <p class="q-analysis">Required drivers are the reinforcement, monitoring, encouragement, and reward structures that sustain critical behaviors after training ends. The SOAR support package was a required drivers system in comprehensive form. Monthly dashboards provided the monitoring function, giving both L&D and business stakeholders a continuous view of whether agents were applying the service style on calls. Coaching and role modeling provided the reinforcement function, keeping the behaviors visible and valued in the daily environment agents returned to after training. The Shout-Out and Agent of the Month recognition programs addressed the reward function, signaling to the entire team that the behaviors being asked for were being watched and celebrated. Global call calibrations ensured that the standard being reinforced in Dubai was the same standard being reinforced in Manchester and Guangzhou.</p>
+      <p class="q-analysis">Taken together, these elements addressed every dimension of the required drivers framework simultaneously. No single component would have been sufficient on its own. Monthly dashboards without coaching produce data that no one acts on. Coaching without monitoring produces uneven application that is impossible to track. Recognition without calibration produces local variation that undermines the global consistency the program was specifically designed to create. The novelty of the package was not in any individual element. It was in the deliberate assembly of all of them into a system that made sustained behavioral change structurally possible rather than individually dependent on each agent's motivation and memory.</p>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header" onclick="toggle(3)" role="button" aria-expanded="false" id="h3">
+    <div class="q-header-left">
+      <span class="q-num">Question 3</span>
+      <span class="q-text">The SOAR evaluation collected data at all four levels: a 94 percent relevance rating from the post-training reaction survey, pre- and post-training application scores from 13,366 monitored calls, a leadership questionnaire measuring internal service style application, and a reduction in customer complaints. How does this chain of evidence differ from what a single-metric evaluation approach would have produced, and what does it make possible that a single metric cannot?</span>
+    </div>
+    <span class="q-toggle" id="i3">+</span>
+  </div>
+  <div class="q-reveal" id="r3" role="region" aria-labelledby="h3">
+    <div class="q-reveal-inner">
+      <p class="q-analysis">A single-metric evaluation approach applied to SOAR would likely have produced one of two things: a customer satisfaction score, or a call quality rating. Either of those numbers, presented in isolation, tells a stakeholder almost nothing useful. A customer satisfaction score that improved after SOAR could have been driven by a change in call volume, a competitor's service failure, seasonal patterns in customer behavior, or any number of factors that had nothing to do with the training program. A call quality rating that improved could reflect coaching quality, management pressure, natural attrition among underperforming agents, or the Hawthorne effect of being monitored. Neither number, alone, connects training to outcome in a way that is analytically defensible or practically actionable.</p>
+      <p class="q-analysis">The chain of evidence Emirates constructed changes what is possible because it documents the pathway, not just the destination. The 94 percent relevance rating at Level 1 established that agents found the content applicable to their actual work, which is the minimum condition for voluntary transfer to occur. The pre- and post-training application scores from 13,366 monitored calls documented that the behaviors taught in the program were actually being performed on the job at a measurably higher rate after training than before it. The leadership questionnaire confirmed that team leaders were applying the service style internally with their teams, which is the Level 3 condition required for coaching and role modeling to function as required drivers. The reduction in customer complaints provided the Level 4 signal that all of this behavioral change was producing an outcome the business cared about.</p>
+      <p class="q-analysis">What this chain makes possible that a single metric cannot is a specific and credible conversation with stakeholders about where the program is working and where it is not. If call quality scores improve but customer complaints do not decrease, the chain tells you to look at Level 4 more carefully. If customer complaints decrease but leadership questionnaire scores are low, the chain tells you the outcome may be fragile because the coaching infrastructure is not as strong as the agent-level application. If reaction scores are high but application scores are flat, the chain tells you the Level 3 support structures are not doing their job. Each link in the evidence chain is a diagnostic tool as well as a reporting one. A single metric cannot provide that kind of feedback. It can only confirm or deny a final outcome, long after the window to intervene has closed.</p>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header" onclick="toggle(4)" role="button" aria-expanded="false" id="h4">
+    <div class="q-header-left">
+      <span class="q-num">Question 4</span>
+      <span class="q-text">The case summary states that SOAR produced "a change in internal culture whereby success at every level was measured, celebrated, and recognized." The case then closes with three recommendations for other organizations. What do those recommendations reveal about what conditions must exist before an approach like SOAR can be replicated, and how do they connect to the Chapter 9 argument that the model applies across any learning context?</span>
+    </div>
+    <span class="q-toggle" id="i4">+</span>
+  </div>
+  <div class="q-reveal" id="r4" role="region" aria-labelledby="h4">
+    <div class="q-reveal-inner">
+      <p class="q-analysis">The three recommendations Emirates offers are striking for what they do not mention. They say nothing about instructional design quality, content expertise, facilitator skill, or technology platforms. Every one of the three conditions they identify is relational and structural rather than instructional. The first recommendation is to meet with all parties before any mission-critical training initiative and draft a memorandum of understanding that spells out critical roles and steps. The second is to offer a learning and performance package approach to any major business need rather than a standalone training initiative. The third is to monitor critical behaviors and other important metrics during the execution stage and make adjustments based on data. These are not recommendations about how to teach. They are recommendations about how to organize the conditions under which teaching can produce lasting change.</p>
+      <p class="q-analysis">What this reveals about replicability is precise: the SOAR approach cannot be copied by copying the training program. It can only be replicated by replicating the organizational conditions that made the training program consequential. A company that runs the SOAR curriculum without the memorandum of understanding, without the on-the-job support package, and without the monitoring and adjustment infrastructure will produce a well-designed training event and little else. The curriculum was the visible part of the initiative. The conditions Emirates describes in its three recommendations were the structural part, and the structural part is what determined whether the visible part produced results or not.</p>
+      <p class="q-analysis">The connection to Chapter 9's argument about the model's universality is direct. Chapter 9 establishes that the Kirkpatrick Model evaluates outcomes, not delivery mechanisms, which means its logic holds regardless of whether the learning occurs in a classroom, an eLearning course, a mobile app, or a social platform. The Emirates case makes the same argument from the organizational side: the evaluation partnership model holds regardless of the industry, the geography, or the scale of the initiative. Dubai and Manchester and Guangzhou required different logistical approaches to the same program. The evaluation framework and the required drivers structure were the constants that made global consistency possible. That is the organizational equivalent of Chapter 9's core claim: the logic of the model does not change when the context does. What changes is the set of tools and adaptations required to apply it.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  var openState = { 1: false, 2: false, 3: false, 4: false };
+
+  function toggle(n) {
+    openState[n] = !openState[n];
+    var panel = document.getElementById('r' + n);
+    var icon = document.getElementById('i' + n);
+    var header = document.getElementById('h' + n);
+
+    if (openState[n]) {
+      panel.classList.add('open');
+      icon.textContent = '+';
+      header.setAttribute('aria-expanded', 'true');
+    } else {
+      panel.classList.remove('open');
+      icon.textContent = '+';
+      header.setAttribute('aria-expanded', 'false');
+    }
+
+    var count = Object.values(openState).filter(function(v) { return v; }).length;
+    document.getElementById('prog-fill').style.width = (count * 25) + '%';
+    document.getElementById('prog-text').textContent = count + ' of 4 revealed';
+  }
+</script>
+
+</body>
+</html>
