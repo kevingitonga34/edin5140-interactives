@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pollack Learning Alliance: Guided Analysis</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    color: #1e293b;
+    background: #ffffff;
+    padding: 24px 20px 40px;
+    line-height: 1.7;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .progress-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .progress-bar {
+    flex: 1;
+    height: 4px;
+    background: #e2e8f0;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: #003567;
+    border-radius: 2px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+
+  .progress-label {
+    font-size: 12px;
+    color: #64748b;
+    white-space: nowrap;
+  }
+
+  .q-card {
+    border: 1px solid #d8e1f0;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: box-shadow 0.25s;
+  }
+
+  .q-card:hover { box-shadow: 0 3px 14px rgba(0,53,103,0.1); }
+
+  .q-header {
+    padding: 18px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 14px;
+    background: #003567;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: background 0.2s;
+  }
+
+  .q-header:hover { background: #002850; }
+
+  .q-header-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    flex: 1;
+  }
+
+  .q-num {
+    font-size: 0.72em;
+    font-weight: 700;
+    color: #FFD200;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    padding-top: 3px;
+    min-width: 72px;
+    flex-shrink: 0;
+  }
+
+  .q-text {
+    font-size: 0.93em;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.5;
+  }
+
+  .q-toggle {
+    font-size: 22px;
+    color: #FFD200;
+    font-weight: 300;
+    line-height: 1;
+    padding-top: 1px;
+    flex-shrink: 0;
+  }
+
+  .q-reveal {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s ease;
+    background: #ffffff;
+    border-top: 0px solid #FFD200;
+  }
+
+  .q-reveal.open {
+    max-height: 2000px;
+    border-top: 3px solid #FFD200;
+  }
+
+  .q-reveal-inner {
+    padding: 24px 26px 28px;
+  }
+
+  .q-analysis {
+    font-size: 0.94em;
+    color: #1e293b;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+
+  .q-analysis:last-child { margin-bottom: 0; }
+
+  .q-analysis strong {
+    color: #003567;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-row">
+  <div class="progress-bar"><div class="progress-fill" id="prog-fill"></div></div>
+  <span class="progress-label" id="prog-text">0 of 4 revealed</span>
+</div>
+
+<div class="q-card">
+  <div class="q-header" onclick="toggle(1)" role="button" aria-expanded="false" id="h1">
+    <div class="q-header-left">
+      <span class="q-num">Question 1</span>
+      <span class="q-text">Pollack's PLAM framework collects data at three distinct points: before the course, during it, and four weeks after. What does this sequencing reveal about how they understood the relationship between data collection timing and the credibility of evaluation findings?</span>
+    </div>
+    <span class="q-toggle" id="i1">+</span>
+  </div>
+  <div class="q-reveal" id="r1" role="region" aria-labelledby="h1">
+    <div class="q-reveal-inner">
+      <p class="q-analysis">Most evaluation frameworks treat timing as a logistical question: when is it convenient to collect data? The PLAM framework treats it as a design question: at which points in the participant's experience does data collection produce information that is actually useful? That distinction drives the entire structure of Pollack's approach and explains why each of the three collection windows produces qualitatively different evidence rather than the same type of evidence gathered at different intervals.</p>
+      <p class="q-analysis">The pre-course stage is not a baseline measurement in the conventional sense. When participants are asked to specify their learning outcomes and confirm that those outcomes are aligned to their job role and discussed with their sponsor, the instrument is not measuring something that already exists. It is creating something: a documented commitment, visible to both the participant and the sponsor, that the training is expected to produce a specific change in how the participant works. This act of pre-course specification transforms the participant from a passive recipient into an accountable agent. It also gives trainers advance knowledge of what participants expect, which allows them to calibrate the delivery accordingly. The instrument here is not measuring intent. It is engineering it.</p>
+      <p class="q-analysis">The during-course instruments operate at the module level rather than at the end of the day, which is the critical timing distinction. Asking participants after each module how they will use that specific feature and how much time they expect to save commits them to a concrete, job-specific application before the learning experience ends. The end-of-day confidence and attitude ratings then capture a running picture of psychological readiness rather than a single retrospective impression. By the time a participant completes the Level 1 evaluation at the end of the program, they have already generated a module-by-module application plan. The Level 1 data is collected in the context of commitments already made, which changes both what participants say and how seriously evaluators can take it.</p>
+      <p class="q-analysis">The four-week post-course survey is the most vulnerable point in the framework and the case is candid about this. Too early to have good statistics, the authors note, and clearly the tough one. This honesty is itself analytically important. A four-week delay is long enough that participants have either applied what they learned or encountered the conditions that prevented it. The data collected at that point is not prediction. It is report. The gap between what participants predicted during the course and what they report four weeks later is exactly the measurement that tells an organization where transfer is succeeding and where the required drivers are failing.</p>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header" onclick="toggle(2)" role="button" aria-expanded="false" id="h2">
+    <div class="q-header-left">
+      <span class="q-num">Question 2</span>
+      <span class="q-text">Pollack requires participants to appoint a sponsor before the course begins. This sponsor is typically a manager who will support the participant's learning back in the workplace. What does this structural requirement reveal about what Pollack understood to be outside the control of the training event itself, and how does the sponsor role function as an evaluation instrument?</span>
+    </div>
+    <span class="q-toggle" id="i2">+</span>
+  </div>
+  <div class="q-reveal" id="r2" role="region" aria-labelledby="h2">
+    <div class="q-reveal-inner">
+      <p class="q-analysis">The sponsor requirement is one of the most structurally sophisticated elements of the PLAM framework, and it is easy to underread it as a communication mechanism rather than an evaluation design decision. It is both, but the evaluation function is the more consequential one. By requiring participants to name a specific person who will support their learning back in the workplace before registration is complete, Pollack is doing something that most training providers do not attempt: making the post-training environment a design variable rather than an external condition beyond their control.</p>
+      <p class="q-analysis">The question of whether learning transfers to the job is almost never a question about the quality of the training. It is a question about what happens after training ends. The participant returns to a workplace with existing demands, familiar habits, and colleagues and managers who may or may not be aware of what the participant is now expected to do differently. Without an identified person who has been made explicitly aware of the participant's learning goals and post-course action plan, the probability of sustained application depends entirely on the participant's individual motivation. That is an unreliable mechanism. The sponsor requirement replaces individual motivation with structural accountability.</p>
+      <p class="q-analysis">As an evaluation instrument, the sponsor functions at Level 3. When the four-week post-course survey asks participants whether they have accomplished their action plan, the sponsor is the organizational condition that makes that question answerable with either yes or no rather than with a vague recollection of good intentions. The follow-up question about how training has impacted the participant's role and the business overall is one that participants with engaged sponsors can answer specifically, because the sponsor has been observing and supporting that application in real time. Participants without engaged sponsors are likely to provide impressionistic responses that are harder to aggregate into actionable data. The sponsor is therefore not just a support mechanism. It is the environmental variable that determines whether the Level 3 and Level 4 instruments produce usable evidence or noise.</p>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header" onclick="toggle(3)" role="button" aria-expanded="false" id="h3">
+    <div class="q-header-left">
+      <span class="q-num">Question 3</span>
+      <span class="q-text">Pollack chose time saved as its primary Level 4 ROI measure rather than a financial output metric. What does this choice reveal about how they applied the instrument design principle of asking questions in the right way, and what are the limitations of self-reported time estimates as evaluation data?</span>
+    </div>
+    <span class="q-toggle" id="i3">+</span>
+  </div>
+  <div class="q-reveal" id="r3" role="region" aria-labelledby="h3">
+    <div class="q-reveal-inner">
+      <p class="q-analysis">The choice of time saved as a Level 4 metric was not arbitrary. Pollack's Managing Director came from an accounting background and framed the business objective in the simplest possible financial terms: organizations either earn more or spend less. For desktop application training covering software like Word, Excel, and PowerPoint, earning more is not a plausible direct outcome. The connection between proficiency in a spreadsheet application and revenue generation is too indirect to measure credibly. Spending less, specifically in the form of hours not wasted on inefficient software use, is directly attributable to the training and directly translatable into a dollar figure through salary data. Time saved is therefore not a proxy for a financial measure. It is the financial measure that is most defensibly connected to this type of training.</p>
+      <p class="q-analysis">The instrument design principle this reflects is the one from this week's reading about matching the nature of the item to the nature of the question. Asking participants whether training improved their productivity would produce agreement-scale responses that tell an evaluator nothing specific. Asking participants how many minutes per day they now save on a specific task type produces a number that can be multiplied by salary rate, summed across participants, and presented to a CEO as a dollars-saved figure. The instrument's credibility depends on the specificity of the question, and the specificity of the question depends on having identified the right metric before the instrument was designed.</p>
+      <p class="q-analysis">The limitation is significant and the case does not fully address it. Self-reported time estimates are subject to multiple biases that structured instrument design cannot eliminate. Participants who enjoyed the training are motivated to report larger time savings. Participants who are uncertain about whether they have actually changed their behavior may report the time savings they intended to achieve rather than the ones they observed. The module-by-module speculation collected during the course compounds this: participants who projected a twenty-minute daily saving are likely to anchor their post-course report to that projection regardless of what they actually experienced. Pollack's Dollars Saved Reports are described as summarizing clients' speculation about time savings and actual savings, which suggests the distinction between projected and realized savings is tracked, but the reliability of either figure as an objective measure depends entirely on whether participants have the self-awareness and motivation to report accurately. This is the honest vulnerability at the center of an otherwise well-designed framework.</p>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header" onclick="toggle(4)" role="button" aria-expanded="false" id="h4">
+    <div class="q-header-left">
+      <span class="q-num">Question 4</span>
+      <span class="q-text">The case reports that client contacts at senior levels love the Dollars Saved Reports, that participant and trainer reaction is favorable, but that precourse participation is only about fifty percent and postcourse statistics are too early to assess. What does this uneven participation picture reveal about the gap between instrument design quality and data collection reliability, and what would need to change for the PLAM framework to produce fully credible Level 4 evidence?</span>
+    </div>
+    <span class="q-toggle" id="i4">+</span>
+  </div>
+  <div class="q-reveal" id="r4" role="region" aria-labelledby="h4">
+    <div class="q-reveal-inner">
+      <p class="q-analysis">The participation picture Pollack describes is the most analytically honest section of the case, and it reveals a tension that runs through the entire PLAM framework. The instruments themselves are well-designed. The sequencing is logical. The choice of time saved as a Level 4 metric is defensible. And yet fifty percent precourse participation means that half of all participants are entering the course without a documented learning outcome, without a confirmed sponsor relationship, and without the pre-course commitment that the entire downstream framework depends on. Virtually all participants complete the during-course stage because they are physically present and the instruments are embedded in the training day. But the postcourse stage, which is the only point at which Level 3 and Level 4 data can actually be collected, is the one that is most uncertain.</p>
+      <p class="q-analysis">This is the gap between instrument design quality and data collection reliability that this week's reading addresses from a different angle. A well-designed survey that no one completes produces no data. A well-designed framework that participants opt out of at the stages where the most important data lives produces credible-looking reports built on a systematically biased sample. The participants who complete the precourse stage are likely to be those who are most motivated, most engaged with their sponsors, and most committed to applying what they learn. The Dollars Saved Reports are therefore almost certainly overestimates, built on data from the participants most likely to report positive outcomes while the participants most likely to have experienced limited transfer are underrepresented or absent entirely.</p>
+      <p class="q-analysis">For the PLAM framework to produce fully credible Level 4 evidence, two structural changes would be required. The first is making precourse participation mandatory rather than optional, which Pollack acknowledges they are working to improve. A sponsor appointment and a documented learning outcome that are required for course registration rather than requested after it would close the gap between the fifty percent who currently engage and the full participant population. The second is building the postcourse survey into an accountability structure rather than leaving it as a voluntary response. The sponsor model already creates the organizational relationship needed for this: a four-week check-in that involves both the participant and the sponsor, framed as a shared review of the action plan rather than an individual survey response, would produce both higher completion rates and more reliable data because the sponsor's presence provides an external check on the accuracy of the participant's self-report. These are not instrument design changes. They are implementation design changes. And the case illustrates precisely why good instrument design is necessary but not sufficient for credible evaluation evidence.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  var openState = { 1: false, 2: false, 3: false, 4: false };
+
+  function toggle(n) {
+    openState[n] = !openState[n];
+    var panel = document.getElementById('r' + n);
+    var icon = document.getElementById('i' + n);
+    var header = document.getElementById('h' + n);
+
+    if (openState[n]) {
+      panel.classList.add('open');
+      icon.textContent = '+';
+      header.setAttribute('aria-expanded', 'true');
+    } else {
+      panel.classList.remove('open');
+      icon.textContent = '+';
+      header.setAttribute('aria-expanded', 'false');
+    }
+
+    var count = Object.values(openState).filter(function(v) { return v; }).length;
+    document.getElementById('prog-fill').style.width = (count * 25) + '%';
+    document.getElementById('prog-text').textContent = count + ' of 4 revealed';
+  }
+</script>
+
+</body>
+</html>
