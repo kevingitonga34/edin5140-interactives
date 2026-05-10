@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IT Skills Training Program: Guided Analysis</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    color: #1e293b;
+    background: #ffffff;
+    padding: 24px 20px 40px;
+    line-height: 1.7;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .progress-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .progress-bar {
+    flex: 1;
+    height: 4px;
+    background: #e2e8f0;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: #003567;
+    border-radius: 2px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+
+  .progress-label {
+    font-size: 12px;
+    color: #64748b;
+    white-space: nowrap;
+  }
+
+  .q-card {
+    border: 1px solid #d8e1f0;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: box-shadow 0.25s;
+  }
+
+  .q-card:hover { box-shadow: 0 3px 14px rgba(0,53,103,0.1); }
+
+  .q-header {
+    padding: 18px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 14px;
+    background: #003567;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: background 0.2s;
+  }
+
+  .q-header:hover { background: #002850; }
+
+  .q-header-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    flex: 1;
+  }
+
+  .q-num {
+    font-size: 0.72em;
+    font-weight: 700;
+    color: #FFD200;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    padding-top: 3px;
+    min-width: 72px;
+    flex-shrink: 0;
+  }
+
+  .q-text {
+    font-size: 0.93em;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.5;
+  }
+
+  .q-toggle {
+    font-size: 22px;
+    color: #FFD200;
+    font-weight: 300;
+    line-height: 1;
+    padding-top: 1px;
+    flex-shrink: 0;
+  }
+
+  .q-reveal {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s ease;
+    background: #ffffff;
+    border-top: 0px solid #FFD200;
+  }
+
+  .q-reveal.open {
+    max-height: 2000px;
+    border-top: 3px solid #FFD200;
+  }
+
+  .q-reveal-inner {
+    padding: 24px 26px 28px;
+  }
+
+  .q-analysis {
+    font-size: 0.94em;
+    color: #1e293b;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+
+  .q-analysis:last-child { margin-bottom: 0; }
+
+  .q-analysis strong {
+    color: #003567;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-row">
+  <div class="progress-bar"><div class="progress-fill" id="prog-fill"></div></div>
+  <span class="progress-label" id="prog-text">0 of 4 revealed</span>
+</div>
+
+<div class="q-card">
+  <div class="q-header" onclick="toggle(1)" role="button" aria-expanded="false" id="h1">
+    <div class="q-header-left">
+      <span class="q-num">Question 1</span>
+      <span class="q-text">Regence adopted the ASTD evaluation tool rather than building a form from scratch, then supplemented it with additional questions for their specific reporting needs. What does this adopt-and-supplement decision reveal about the tension between standardization and program specificity in evaluation design, and how does it reflect this week's chapter argument that no standardized form works in all circumstances?</span>
+    </div>
+    <span class="q-toggle" id="i1">+</span>
+  </div>
+  <div class="q-reveal" id="r1" role="region" aria-labelledby="h1">
+    <div class="q-reveal-inner">
+      <p class="q-analysis">The adopt-and-supplement decision is one of the most practically instructive moments in the entire case, and it is easy to read past it as a minor logistical note. It is not. It represents a deliberate resolution of one of the central tensions in evaluation design: the tension between tools that produce comparable data across programs and organizations, and tools that capture the specific behaviors, outcomes, and conditions that make a given program meaningful to the stakeholders who funded it.</p>
+      <p class="q-analysis">A fully standardized tool has one significant advantage and one significant limitation. The advantage is that its data can be benchmarked against other organizations' results using the same instrument, which is exactly what the Oregon Department of Community Colleges and Workforce Development required of Regence. When an external body requests data in a specific format, developing a proprietary tool that produces incompatible data is not a viable option. The ASTD tool provided the standardized structure that the reporting requirement demanded. But standardized tools are designed to work across a wide range of programs, which means they cannot be tailored to the specific objectives, delivery conditions, and performance expectations of any particular one. A question about whether training is applicable to the participant's job is generic enough to appear on any evaluation. A question about whether specific IT skills are being used to complete specific workflow tasks at Regence is not, and the generic question cannot produce the program-specific data that RITS Professional Development needed to report to its internal clients by participant, class, and instructor.</p>
+      <p class="q-analysis">The supplemental questions resolved this by layering program-specific reporting items on top of the standardized foundation. This is the operational meaning of this week's chapter argument that a standardized form that works in all circumstances does not exist. The resolution is not to abandon standardization or to abandon specificity. It is to understand which layer of your instrument serves which purpose, build each layer deliberately, and resist the temptation to assume that one replaces the other. Regence needed both, and the design reflects that. The standardized items produced benchmark-comparable data. The supplemental items produced the program-level detail that made the evaluation actionable for the people managing it.</p>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header" onclick="toggle(2)" role="button" aria-expanded="false" id="h2">
+    <div class="q-header-left">
+      <span class="q-num">Question 2</span>
+      <span class="q-text">Part A evaluates Levels 1 and 2 immediately after each class. Part B evaluates Levels 1, 2, and 3 several weeks later. Yet Part A uses a five-point agreement scale and Part B uses a six-point extent scale, making direct comparison between the two parts analytically difficult. What does this design inconsistency reveal about the tradeoffs in blended evaluation design, and what would need to change for the two parts to support comparative analysis?</span>
+    </div>
+    <span class="q-toggle" id="i2">+</span>
+  </div>
+  <div class="q-reveal" id="r2" role="region" aria-labelledby="h2">
+    <div class="q-reveal-inner">
+      <p class="q-analysis">The case is admirably transparent about this limitation, noting directly that any attempts at comparative analysis of the two parts must overcome the differences in question items in Part A immediately after the training and in Part B several weeks or months later. This candor is analytically valuable precisely because it names a problem that most evaluation reports leave invisible. The fact that two instruments in the same evaluation system use different scales, different item formats, and different response choice wording is not a trivial formatting decision. It is a structural barrier to the most useful thing a two-part evaluation can do: show how participants' assessments of the same training changed between their immediate post-training impression and their delayed on-the-job experience.</p>
+      <p class="q-analysis">The reasons for the inconsistency are not mysterious. Part A was designed to measure the program experience while it was fresh, which suited an agreement-scale format where participants were reacting to statements about what just happened. Part B was designed to measure extent of application and impact weeks later, which suited an extent-scale format where participants were reporting on degrees of behavior change and performance shift rather than agreement with program-level statements. Both choices made sense for their individual purposes. The problem is that optimizing each part independently produced two instruments that could not be read as a continuous narrative of the same participant's evaluation journey.</p>
+      <p class="q-analysis">For the two parts to support comparative analysis, the design would need to identify the specific constructs that both instruments are trying to measure at both time points and use consistent scale formats for those constructs across both tools. Perceived relevance, for example, appears in Part A as a statement to agree or disagree with and in Part B as an extent question about how accurately the content reflected the job. Both are measuring the same underlying construct, job relevance, but in forms that cannot be compared. Redesigning those items to use the same question format and scale would allow an evaluator to show that relevance perceptions either held, increased, or declined between immediate and delayed measurement, which is information that stakeholders can act on. The current design can only show that both scores were high, which tells a less useful story.</p>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header" onclick="toggle(3)" role="button" aria-expanded="false" id="h3">
+    <div class="q-header-left">
+      <span class="q-num">Question 3</span>
+      <span class="q-text">Part B response rates were higher than Part A: 98.10 percent versus 92.10 percent. Both rates were above the expected two-thirds benchmark. The case attributes this to active communication and follow-up by RITS Professional Development and supervisors. What does the mechanism behind these response rates reveal about the relationship between evaluation design and evaluation implementation, and what are the implications for how evaluators should think about the "final review" step from this week's reading?</span>
+    </div>
+    <span class="q-toggle" id="i3">+</span>
+  </div>
+  <div class="q-reveal" id="r3" role="region" aria-labelledby="h3">
+    <div class="q-reveal-inner">
+      <p class="q-analysis">The response rates in this case are the most counterintuitive data point in the entire evaluation. In virtually every organization, response rates for follow-up surveys are lower than response rates for immediate post-training surveys. The logic is straightforward: participants are present and available at the end of training, the evaluation is a natural closure to the session, and the social context makes non-participation awkward. A follow-up survey arrives weeks later in the context of competing work demands, with no social pressure for completion and often no clear indication of why it matters. A 98 percent response rate on a delayed follow-up is not a design achievement. It is an implementation achievement.</p>
+      <p class="q-analysis">The case makes this explicit: the higher Part B response rate was maintained by good communications from RITS Professional Development with participants and their supervisors. This means that someone with organizational standing was actively following up, reminding participants of the survey, and communicating its importance in a way that made non-participation feel like a professional lapse rather than an administrative oversight. The supervisors' involvement amplified this effect because their participation in the Part B tool created a shared accountability dynamic. When both the participant and their supervisor are completing the same evaluation, the participant's response is no longer a private act. It is part of a shared organizational conversation about the value of the training investment.</p>
+      <p class="q-analysis">The implication for the three-point final review from this week's reading is precise. The final review asks evaluators to imagine how a busy and important person will experience completing the survey, to think through what different response patterns would mean in analysis, and to pilot test with a representative sample. All three of these actions are design activities performed before the instrument is distributed. What the Regence case adds is that the design review is necessary but not sufficient. The highest-risk point in any evaluation is not a poorly worded item. It is the moment between distributing the instrument and receiving completed responses, when participants decide whether the evaluation is worth their time. Design quality determines whether a completed response is useful. Implementation quality determines whether a response is received at all.</p>
+    </div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-header" onclick="toggle(4)" role="button" aria-expanded="false" id="h4">
+    <div class="q-header-left">
+      <span class="q-num">Question 4</span>
+      <span class="q-text">The case closes by noting that participants reported a 54 percent improvement in performance on course objectives and a 24 percent improvement in overall job performance. The evaluation covers Levels 1, 2, and 3 but does not attempt Level 4. What does the absence of Level 4 data reveal about the evaluation's completeness as a chain of evidence, and what specific step would Regence need to take to close the gap between the Level 3 findings and an organizational results claim?</span>
+    </div>
+    <span class="q-toggle" id="i4">+</span>
+  </div>
+  <div class="q-reveal" id="r4" role="region" aria-labelledby="h4">
+    <div class="q-reveal-inner">
+      <p class="q-analysis">The 54 and 24 percent self-reported performance improvement figures are the most compelling numbers in the case and also the most analytically fragile. They are compelling because they are specific, because they are reported by participants who had time to observe their own performance after training, and because the response rate of 95.80 percent means they represent the experience of nearly all participants rather than a self-selected minority. They are fragile because they are self-reported, because they ask participants to estimate percentage changes in their own performance rather than measure those changes through objective observation, and because they establish no connection to an organizational outcome that existed independently of the training program.</p>
+      <p class="q-analysis">The absence of Level 4 data is not a failure of execution. The case does not claim to evaluate Level 4, and for an IT skills training program delivered across seventeen classes over eight months, identifying a credible organizational outcome and connecting participant-level performance improvement to it is a genuinely difficult task. Performance on IT course objectives and overall job performance are not the same thing as organizational results. A participant who reports 54 percent improvement in using a specific software application is describing a change in their own capability. Whether that capability improvement reduced processing time, decreased error rates, improved service delivery, or contributed to any other outcome the organization cares about is not answered by the evaluation as designed.</p>
+      <p class="q-analysis">The specific step Regence would need to take to close this gap is exactly the one this course has been describing since Week 5: a pre-training conversation with the business stakeholders who funded the training to identify the organizational metric they expected the IT skills improvements to move, and a commitment to gather data on that metric before and after the training rollout. For a healthcare organization of Regence's scale, candidates might include processing time per transaction, error rate on IT-dependent workflows, or staff productivity as measured by volume of completed work per unit time. None of these require a new data collection system. All of them are almost certainly being tracked somewhere in the organization already. The evaluator's job is not to build the measurement infrastructure. It is to identify who owns it, establish the relationship before training begins, and connect the Part B self-reported performance data to the organizational metric data that gives it credible external validation. Without that connection, the 54 and 24 percent figures tell a compelling story about participant experience. With it, they become the first link in a chain of evidence that reaches all the way to organizational results.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  var openState = { 1: false, 2: false, 3: false, 4: false };
+
+  function toggle(n) {
+    openState[n] = !openState[n];
+    var panel = document.getElementById('r' + n);
+    var icon = document.getElementById('i' + n);
+    var header = document.getElementById('h' + n);
+
+    if (openState[n]) {
+      panel.classList.add('open');
+      icon.textContent = '+';
+      header.setAttribute('aria-expanded', 'true');
+    } else {
+      panel.classList.remove('open');
+      icon.textContent = '+';
+      header.setAttribute('aria-expanded', 'false');
+    }
+
+    var count = Object.values(openState).filter(function(v) { return v; }).length;
+    document.getElementById('prog-fill').style.width = (count * 25) + '%';
+    document.getElementById('prog-text').textContent = count + ' of 4 revealed';
+  }
+</script>
+
+</body>
+</html>
